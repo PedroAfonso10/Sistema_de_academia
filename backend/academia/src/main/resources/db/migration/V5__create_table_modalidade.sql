@@ -1,0 +1,6 @@
+CREATE TABLE modalidade (
+    id BIGSERIAL PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    descricao TEXT NOT NULL,
+    ativo BOOLEAN NOT NULL DEFAULT TRUE
+);

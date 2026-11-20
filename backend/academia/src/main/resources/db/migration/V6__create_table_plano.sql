@@ -1,0 +1,7 @@
+CREATE TABLE plano (
+    id BIGSERIAL PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    valor_mensal NUMERIC(10, 2) NOT NULL,
+    duracao_meses INTEGER NOT NULL,
+    ativo BOOLEAN NOT NULL DEFAULT TRUE
+);
