@@ -34,7 +34,7 @@ public class Pagamento {
     private FormaPagamento formaPagamento;
 
     public Pagamento(Contrato contrato, BigDecimal valor, LocalDate dataPagamento, FormaPagamento formaPagamento) {
-        if (!contrato.ativar()) {
+        if (!contrato.isAtivo()) {
             throw new IllegalStateException("O pagamento exige um contrato ativo.");
         }
         this.contrato = contrato;
