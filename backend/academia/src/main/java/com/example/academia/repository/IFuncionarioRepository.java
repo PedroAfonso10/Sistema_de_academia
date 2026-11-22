@@ -9,5 +9,5 @@ import java.util.List;
 
 @Repository
 public interface IFuncionarioRepository extends JpaRepository<Funcionario, Long> {
-    List<Funcionario> listByPerfil(Perfil perfil);
+    List<Funcionario> findByPerfil(Perfil perfil);
 }
