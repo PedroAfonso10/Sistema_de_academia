@@ -59,12 +59,12 @@ public class Contrato {
         return dataAtual.isAfter(this.dataFim);
     }
 
-    public boolean ativar() {
+    public boolean isAtivo() {
         return this.statusContrato == StatusContrato.ATIVO;
     }
 
     public boolean encerrarSeVencido(LocalDate dataAtual) {
-        if (ativar() && estaVencido(dataAtual)) {
+        if (isAtivo() && estaVencido(dataAtual)) {
             this.statusContrato = StatusContrato.ENCERRADO;
             return true;
         }
@@ -82,7 +82,7 @@ public class Contrato {
     }
 
     private void validarContratoAtivo(String acao) {
-        if (!ativar()) {
+        if (isAtivo()) {
             throw new IllegalStateException(
                     "Não é possível " + acao + " um contrato com status " + this.statusContrato + ".");
         }
