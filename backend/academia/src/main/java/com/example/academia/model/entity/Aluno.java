@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
+import java.time.Year;
+
 @Entity
 @Table(name = "aluno")
 @Getter
@@ -20,5 +22,9 @@ public class Aluno extends Pessoa{
 
     public Papel getPapel(){
         return Papel.ALUNO;
+    }
+
+    public void gerarMatricula() {
+        this.matricula = Year.now().getValue() + String.format("%05d", this.getId());
     }
 }
