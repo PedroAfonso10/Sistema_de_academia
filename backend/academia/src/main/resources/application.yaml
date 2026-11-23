@@ -14,3 +14,14 @@ spring:
   flyway:
     enabled: true
     locations: classpath:db/migration
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:abcdefg1234567hijklmn8910opqrstuvwxyz}
+    expiracao-minutos: 60
+  admin:
+    senha: ${ADMIN_SENHA:admin12345}
+
+logging:
+  level:
+    org.springframework.security: TRACE
