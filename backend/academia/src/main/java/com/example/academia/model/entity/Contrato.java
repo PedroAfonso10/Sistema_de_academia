@@ -82,7 +82,7 @@ public class Contrato {
     }
 
     private void validarContratoAtivo(String acao) {
-        if (isAtivo()) {
+        if (!isAtivo()) {
             throw new IllegalStateException(
                     "Não é possível " + acao + " um contrato com status " + this.statusContrato + ".");
         }
