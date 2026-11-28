@@ -28,6 +28,11 @@ public class AutenticacaoService {
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
 
+    @Transactional
+    public void criarContaInicial(Pessoa pessoa, String senha) {
+        icontaAcessoRepository.save(new ContaAcesso(pessoa, passwordEncoder.encode(senha)));
+    }
+
     public String login(String identificador, String senha) {
         try {
             Authentication auth = authenticationManager.authenticate(
