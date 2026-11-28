@@ -60,6 +60,8 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.PUT, "/auth/contas/*").hasRole("FUNCIONARIO")
                         .requestMatchers(HttpMethod.POST, "/pagamentos").hasRole("FUNCIONARIO")
 
+                        .requestMatchers("/error").permitAll()
+
                         // Demais rotas: autenticado. Regras finas (propriedade) ficam no Service.
                         .anyRequest().authenticated())
                 .addFilterBefore(new JwtAuthenticationFilter(jwtService, ipessoaRepository),
