@@ -24,7 +24,7 @@ public class Aluno extends Pessoa{
         return Papel.ALUNO;
     }
 
-    public void gerarMatricula() {
-        this.matricula = Year.now().getValue() + String.format("%05d", this.getId());
+    public void gerarMatricula(long sequencial) {
+        this.matricula = Year.now().getValue() + String.format("%05d", sequencial);
     }
 }
