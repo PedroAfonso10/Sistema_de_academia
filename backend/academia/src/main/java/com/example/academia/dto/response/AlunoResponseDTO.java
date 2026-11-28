@@ -11,6 +11,7 @@ public class AlunoResponseDTO {
     private final Long id;
     private final String nome;
     private final String email;
+    private final String cpf;
     private final LocalDate dataNascimento;
     private final String matricula;
     private final boolean ativo;
