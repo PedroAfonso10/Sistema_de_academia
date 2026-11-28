@@ -12,9 +12,6 @@ import lombok.Setter;
 @NoArgsConstructor
 public class CriarContaRequestDTO {
 
-    @NotNull(message = "pessoaId é obrigatório")
-    private Long pessoaId;
-
     @NotBlank(message = "Senha é obrigatória")
     @Size(min = 6, max = 72, message = "Senha deve ter entre 6 e 72 caracteres")
     private String senha;
